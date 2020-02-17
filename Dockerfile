@@ -1,7 +1,7 @@
 FROM alpine:3.9
 
 ENV K8S_VERSION=v1.14.9
-ENV HELM_VERSION=v2.16.3
+ENV HELM_VERSION=v3.1.0
 ENV HELM_FILENAME=helm-${HELM_VERSION}-linux-amd64.tar.gz
 
 RUN apk add --update ca-certificates \
