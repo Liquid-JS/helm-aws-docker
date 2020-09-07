@@ -1,14 +1,14 @@
 FROM alpine:latest
 
-ENV K8S_VERSION=v1.16.8
-ENV HELM_VERSION=v3.2.4
+ENV K8S_VERSION=v1.17.9
+ENV HELM_VERSION=v3.3.1
 ENV DOCKER_VERSION=19.03.12
 ENV GLIBC_VER=2.31-r0
 ENV HELM_FILENAME=helm-${HELM_VERSION}-linux-amd64.tar.gz
 
 RUN apk add --update ca-certificates \
     && apk add --update -t deps curl  \
-    && apk add --update gettext tar gzip unzip \
+    && apk add --update gettext tar gzip unzip jq \
     && curl -L https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
     && curl -L https://get.helm.sh/${HELM_FILENAME} | tar xz && mv linux-amd64/helm /bin/helm && rm -rf linux-amd64 \
