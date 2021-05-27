@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 skopeo copy --src-creds=$1 docker://$2 dir:tmp
 layers=$(jq -r '.layers[] | .digest[7:]' tmp/manifest.json)
