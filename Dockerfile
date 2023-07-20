@@ -1,8 +1,8 @@
 FROM alpine:latest
 
-ENV K8S_VERSION=v1.23.7
-ENV HELM_VERSION=v3.9.4
-ENV DOCKER_VERSION=20.10.17
+ENV K8S_VERSION=v1.27.4
+ENV HELM_VERSION=v3.12.2
+ENV DOCKER_VERSION=24.0.4
 ENV GLIBC_VER=2.34-r0
 ENV HELM_FILENAME=helm-${HELM_VERSION}-linux-amd64.tar.gz
 
@@ -16,7 +16,7 @@ RUN apk add --update ca-certificates \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-${GLIBC_VER}.apk \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk \
-    && apk add --no-cache glibc-${GLIBC_VER}.apk glibc-bin-${GLIBC_VER}.apk glibc-i18n-${GLIBC_VER}.apk \
+    && apk add --no-cache glibc-${GLIBC_VER}.apk glibc-bin-${GLIBC_VER}.apk glibc-i18n-${GLIBC_VER}.apk --force-overwrite \
     && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && ./aws/install \
