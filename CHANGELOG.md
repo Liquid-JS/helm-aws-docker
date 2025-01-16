@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.31.5
+
+-   **Kubectl**: 1.31.5
+
 ## v1.30.9
 
 -   **Kubectl**: 1.30.9

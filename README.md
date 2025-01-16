@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/github/license/Liquid-JS/helm-aws-docker.svg)](https://github.com/Liquid-JS/helm-aws-docker/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/liquidjs/helm-aws-docker.svg)](https://hub.docker.com/r/liquidjs/helm-aws-docker/)
 
-Helm, AWS CLI, Kubect, and Docker all packed into a single container.
+Helm, AWS CLI, Kubectl, and Docker all packed into a single container.
 
 ## Usage
 
