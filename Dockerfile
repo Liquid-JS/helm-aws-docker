@@ -9,7 +9,7 @@ ENV HELM_FILENAME=helm-${HELM_VERSION}-linux-amd64.tar.gz
 RUN apk add --update ca-certificates \
     && apk add --update -t deps curl  \
     && apk add --update gettext tar gzip unzip jq skopeo binutils ncftp rsync openssh-client \
-    && curl -L https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
+    && curl -L https://dl.k8s.io/release/${K8S_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
     && curl -L https://get.helm.sh/${HELM_FILENAME} | tar xz && mv linux-amd64/helm /bin/helm && rm -rf linux-amd64 \
     && curl -sL https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub \
